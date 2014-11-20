@@ -1,0 +1,26 @@
+{
+  "name": "<%= elementName %>",
+  "version": "0.0.0",
+  "authors": [
+    "<%= ghUser %> <anonymous@example.com>"
+  ],
+  "description": "Element providing solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer"
+  ],
+  "main": "<%= elementName %>.html",
+  "license": "MIT",
+  "homepage": "https://github.com/<%= ghUser %>/<%= elementName %>/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "polymer": "Polymer/polymer#^0.5.1",
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0-rc1"
+  }
+}
