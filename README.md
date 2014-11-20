@@ -7,13 +7,13 @@ This generator launches a livereload connect process to view the docs AND your e
   - my-element.js
   - my-element.post.html
 
-On any file change, the grunt process concats these 3 files to together into my-element.html. The same goes for the test script in the test diretory.  
+On any file change, the grunt process concats these 3 files together into my-element.html. The same goes for the test script in the test diretory.  
 
 ## getting started
 
 to use this generator, 
   - create a directory and cd into it
   - execute with a name that contains at least one '-'
-  - ''''yo fin-polymer my-polymer-seed-name''''
+  - yo fin-polymer my-polymer-seed-name
   - cd into your newly created directory
   - run ''''npm install''''  //< you may to use sudo on this step... 
