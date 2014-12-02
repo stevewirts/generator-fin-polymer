@@ -67,6 +67,7 @@ var FinPolymerSeedGenerator = yeoman.generators.Base.extend({
     this.template('test/basic-test.pre.html', 'test/basic-test.pre.html');
     this.template('test/basic-test.js', 'test/basic-test.js');
     this.template('test/basic-test.post.html', 'test/basic-test.post.html');
+    this.template('gp.sh', 'gp.sh');
   },
   install: function () {
     this.installDependencies({
