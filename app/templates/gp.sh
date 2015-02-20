@@ -14,14 +14,22 @@
 
 # usage gp Polymer core-item [branch]
 # Run in a clean directory passing in a GitHub org and repo name
-org=$1
-repo=$2
-branch=${3:-"master"} # default to master when branch isn't specified
+
+org=<%= ghOrg %>
+repo=<%= elementName %>
+branch="master" # default to master when branch isn't specified
+
+#delete existing temp and recreate it, them move there
+rm -rf ../temp
+mkdir ../temp
+cd ../temp
 
 # make folder (same as input, no checking!)
 mkdir $repo
+
 #git clone git@github.com:$org/$repo.git --single-branch
 git clone http://github.com/$org/$repo.git --single-branch
+
 # switch to gh-pages branch
 pushd $repo >/dev/null
 git checkout --orphan gh-pages
@@ -40,11 +48,13 @@ echo "{
   \"directory\": \"components\"
 }
 " > .bowerrc
-bower install --save $org/$repo#$branch
 
-cp -rf ../../core-component-page ./components/core-component-page
-cp -rf ../../webcomponentsjs ./components/webcomponentsjs
-cp -rf ../../polymer ./components/polymer
+git clone http://github.com/$org/$repo.git components/$repo
+pwd
+rm -rf components/$repo/.git
+
+# copy all dependencies while excluding this directory...
+rsync -r --exclude=temp --exclude=fin-hypergrid ../../ ./components/
 
 # redirect by default to the component folder
 echo "<META http-equiv="refresh" content=\"0;URL=components/$repo/\">" >index.html

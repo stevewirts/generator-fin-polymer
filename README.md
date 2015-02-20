@@ -1,19 +1,55 @@
 generator-fin-polymer
 ================
 
-This generator creates a seed polymer project with a minimal grunt server.  The project is derived from the polymer groups cannonical seed structure as closely as possible so look there for documentation as well.  
-This generator launches a livereload connect process to view the docs AND your element demo page.  The element has been factored into 3 files to seperate out the javascript so that it can be linted;<br>  
-  - my-element.pre.html
-  - my-element.js
-  - my-element.post.html
+This generator creates a seed polymer project with a minimal grunt server.  The project was originally derived from the polymer groups cannonical seed structure but has drifted from that recently.
 
-On any file change, the grunt process concats these 3 files together into my-element.html. The same goes for the test script in the test diretory.  
+This generator launches a livereload connect process to view the docs AND your element demo page.  The element components can be found in a polymer subdirectory, from there all pieces are found in either js, css, or html folders. 
 
-## getting started
+This generator assumes the polymer-project custom component project structure, meaning you need a contain folder to hold dependency projects alonside this project.  The structure should like this
 
-to use this generator, 
-  - create a directory and cd into it
-  - execute with a name that contains at least one '-'
-  - yo fin-polymer my-polymer-seed-name
-  - cd into your newly created directory
-  - npm install  //< you may to use sudo on this step... 
+/outer-project-folder
+  /dependency-01
+  /dependency-02
+  /dependency-03
+  /dependency-.....
+  /my-new-polymer-component
+    /polymer
+       /html
+       /css
+       /js
+    .bowerrc
+    .editorconfig
+    .jshintrc
+    .gitignore
+    Gruntfile.js
+    gp.sh
+    index.html
+    demo.html
+    bower.json
+    package.json
+    README.md
+    standalone.html
+    my-new-polymer-component.min.html
+
+----
+
+to setup a new project with this yo generator, 
+  create holding directory
+  cd into it
+  yo fin-polymer
+  answer 3 questions 
+  cd into project-name
+  sudo npm install // because of wct-test
+  grunt serve
+-------
+
+grunt will auto create main element if they don't exist
+will create/delete html/css/test files based on js file existence
+
+create new polymer element with grunt polymer:piece-name
+after you've pushed to git the first time you can update the github pages with ./gp.sh
+
+
+it will update core-element-page docs
+
+grunt will auto vulcanize
