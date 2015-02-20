@@ -15,9 +15,9 @@ This generator assumes the polymer-project custom component project structure, m
   * create holding directory ie:outer-project-folder
   * cd into it
   * yo fin-polymer
-  * answer 3 questions 
+  * answer 3 questions (org name, github id, element-name)
   * cd into project-name
-  * sudo npm install // because of wct-test
+  * sudo npm install // sudo because of wct-test
   * grunt serve
 
 ## other things
