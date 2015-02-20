@@ -11,21 +11,20 @@ This generator assumes the polymer-project custom component project structure, m
 
 ----
 
-##to setup a new project with this yo generator, 
-  * create holding directory
+## to setup a new project with this yo generator, 
+  * create holding directory ie:outer-project-folder
   * cd into it
   * yo fin-polymer
   * answer 3 questions 
   * cd into project-name
   * sudo npm install // because of wct-test
   * grunt serve
--------
 
-##other things
-* grunt will auto create main element if they don't exist
-* grunt will create/delete html/css/test files based on js file existence
-* create new polymer element with grunt ```polymer:piece-name```
-* after you've pushed to git the first time you can update the github pages with ```./gp.sh```
-* it will update core-element-page docs
-* grunt will auto vulcanize to element-name.min.html
-* see standalone.html to use the vulcanized element-name.min.html file
+## other things
+  * grunt will auto create main element-name if it don't exist
+  * grunt will create/delete html/css/test files based on js file existence
+  * create new polymer element with ```grunt polymer:piece-name```
+  * after you've pushed to git the first time you can update the github pages with ```./gp.sh```
+  * it will update core-element-page docs
+  * grunt will auto vulcanize to element-name.min.html
+  * see standalone.html to use the vulcanized element-name.min.html file
