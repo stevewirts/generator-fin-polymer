@@ -56,19 +56,19 @@ var FinPolymerSeedGenerator = yeoman.generators.Base.extend({
     // Construct the element as a subdirectory.
     this.destinationRoot(this.elementName);
 
-    this.copy('gitignore', '.gitignore');
-    this.copy('gitattributes', '.gitattributes');
-    this.copy('bowerrc', '.bowerrc');
+    this.template('gitignore', '.gitignore');
+    this.template('gitattributes', '.gitattributes');
+    this.template('bowerrc', '.bowerrc');
     this.template('_bower.json', 'bower.json');
-    this.copy('jshintrc', '.jshintrc');
-    this.copy('Gruntfile.js', 'Gruntfile.js');
-    this.copy('editorconfig', '.editorconfig');
+    this.template('jshintrc', '.jshintrc');
+    this.template('Gruntfile.js', 'Gruntfile.js');
+    this.template('editorconfig', '.editorconfig');
     // this.template('_seed-element.css', this.elementName + '.css');
     // this.template('_seed-element.pre.html', this.elementName + '.pre.html');
     // this.template('_seed-element.post.html', this.elementName + '.post.html');
     // this.template('_seed-element.js', this.elementName + '.js');
     this.template('index.html', 'index.html');
-    this.template('standalone.html', 'standalone.html');
+    this.template('standalone.html', 'examples/standalone.html');
     this.template('demo.html', 'demo.html');
     this.template('README.md', 'README.md');
     this.template('package.json', 'package.json');
